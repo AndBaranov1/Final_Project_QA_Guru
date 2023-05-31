@@ -1,0 +1,18 @@
+Telegram username: @Test_QaGuru_task14_bot
+Telegram token: 5997355174:AAEH9YJI6UNqzVvQI1Eeu-xLupbEwinyJ0E
+Chat id: -1001869344764
+
+Fetch bot updates and look for the chat id:
+curl https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/getUpdates | jq .message.chat.id
+curl https://api.telegram.org/bot5997355174:AAEH9YJI6UNqzVvQI1Eeu-xLupbEwinyJ0E/getUpdates
+
+Send a message using the HTTP API:
+curl -X POST  -H 'Content-Type: application/json' -d '{"chat_id": "123456789", "text": "This is a test from curl", "disable_notification": true}' https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
+curl -X POST  -H 'Content-Type: application/json' -d '{"chat_id": "-1001869344764", "text": "This is a test from", "disable_notification": true}' https://api.telegram.org/bot5997355174:AAEH9YJI6UNqzVvQI1Eeu-xLupbEwinyJ0E/sendMessage
+
+curl -X POST -H-Headers @{ "Content-Type" = "application/json" } -d '{"chat_id": "-1001869344764", "text": "This is a test from curl", "disable_notification": true}' https://api.telegram.org/5997355174:AAEH9YJI6UNqzVvQI1Eeu-xLupbEwinyJ0E/sendMessage
+
+
+Run jar with notifications
+java "-DconfigFile=notifications/config.json" -jar notifications/allure-notifications-4.2.1.jar
+java "-DconfigFile=notifications/telegram.json" -jar notifications/allure-notifications-4.2.1.jar
