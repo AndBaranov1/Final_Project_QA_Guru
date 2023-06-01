@@ -55,6 +55,7 @@ dependencies {
             "org.aeonbits.owner:owner:$ownerVersion",
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "com.codeborne:selenide:$selenideVersion",
+            "com.google.code.gson:gson:2.10.1",
             'io.github.bonigarcia:webdrivermanager:5.2.1',
             'com.fasterxml.jackson.core:jackson-core:2.14.2',
             'org.junit.jupiter:junit-jupiter-api:5.6.2',
@@ -78,9 +79,14 @@ tasks.withType(Test) {
     }
 }
 
-task main_test(type: Test) {
+task web_test(type: Test) {
     useJUnitPlatform {
-        includeTags("Web")
+        includeTags("web")
+    }
+}
+task api_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("api")
     }
 }
 

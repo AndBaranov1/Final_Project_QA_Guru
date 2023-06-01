@@ -6,6 +6,8 @@ import drivers.models.SearchResponseModel;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import tests.Specs;
 
@@ -14,6 +16,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tags({@Tag("api")})
 public class StoreSteamPoweredApiTest {
 
     @Test
