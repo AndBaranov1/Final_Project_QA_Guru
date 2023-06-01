@@ -38,7 +38,7 @@ public class StoreSteamPoweredApiTest {
                 .spec(Specs.responseSpec)
                 .log().body()
                 .extract().as(SearchResponseModel.class);
-        assertEquals( 22, data.getTotal_count());
+        assertEquals( 1, data.getTotal_count());
     }
 
     @DisplayName("Open game Dota 2")

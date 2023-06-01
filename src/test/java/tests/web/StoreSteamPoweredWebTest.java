@@ -41,12 +41,24 @@ public class StoreSteamPoweredWebTest extends TestBase {
             steamPoweredPage.openPage();
         });
 
+        step("Click on language pull down", () -> {
+            steamPoweredPage.clickLanguage();
+        });
+
+        step("Hover your mouse over language English", () -> {
+            steamPoweredPage.mouseOverLanguage();
+        });
+
+        step("Click on language English", () -> {
+            steamPoweredPage.chooseLanguageEnglish();
+        });
+
         step("Hover your mouse over the section new and interesting", () -> {
             steamPoweredPage.changeNewAndInteresting();
         });
 
-        step("Click tab most popular", () -> {
-            steamPoweredPage.clickTabPopular();
+        step("Click tab most played", () -> {
+            steamPoweredPage.clickTabMostPlayed();
         });
 
         step("Click game in list", () -> {

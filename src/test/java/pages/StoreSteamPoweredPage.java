@@ -3,7 +3,6 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -13,8 +12,10 @@ public class StoreSteamPoweredPage {
     setLogin = $(".newlogindialog_TextField_2KXGK:nth-child(1) > .newlogindialog_TextInput_2eKVn"),
     setPassword = $(".newlogindialog_TextField_2KXGK:nth-child(2) > .newlogindialog_TextInput_2eKVn"),
     submitBtn =  $(".newlogindialog_SubmitButton_2QgFE"),
-    tabNewAndInrteresting = $(byText("Новое и интересное")),
-    tabPopular = $("#noteworthy_flyout .popup_menu_item:nth-child(3)"),
+    language  = $("#language_pulldown"),
+    chooseLanguage = $(".popup_menu_item:nth-child(22)"),
+    tabNewAndInrteresting = $("#noteworthy_tab .pulldown_desktop"),
+    mostPlayed = $("#noteworthy_flyout .popup_menu_item:nth-child(3)"),
     clickGame =  $(".weeklytopsellers_TableRow_2-RN6"),
     addBasketBtn =  $("#btn_add_to_cart_54029 > span"),
     verifyPrimeStatus = $(".cart_item_desc > a"),
@@ -50,13 +51,28 @@ public class StoreSteamPoweredPage {
         return this;
     }
 
+    public StoreSteamPoweredPage clickLanguage() {
+        language.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage mouseOverLanguage() {
+        chooseLanguage.hover();
+        return this;
+    }
+
+    public StoreSteamPoweredPage chooseLanguageEnglish() {
+        chooseLanguage.click();
+        return this;
+    }
+
     public StoreSteamPoweredPage changeNewAndInteresting() {
         tabNewAndInrteresting.hover();
         return this;
     }
 
-    public StoreSteamPoweredPage clickTabPopular() {
-        tabPopular.click();
+    public StoreSteamPoweredPage clickTabMostPlayed() {
+        mostPlayed.click();
         return this;
     }
 
