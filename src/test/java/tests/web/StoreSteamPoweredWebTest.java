@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.switchTo;
 import static io.qameta.allure.Allure.step;
 
 @Tags({@Tag("web")})
@@ -113,12 +115,18 @@ public class StoreSteamPoweredWebTest extends TestBase {
             steamPoweredPage.clickGiftCards();
         });
 
+        step("switchTo Window", () -> {
+            switchTo().window(1);
+        });
+
         step("Send through steam", () -> {
             steamPoweredPage.sendThroughSteam();
         });
+
         step("Verify digital gift cards", () -> {
-            steamPoweredPage.verifyListGiftCardsSteam("ЭЛЕКТРОННЫЕ ПОДАРОЧНЫЕ КАРТЫ");
+            steamPoweredPage.verifyListGiftCardsSteam("DIGITAL GIFT CARDS");
         });
+
     }
 
 

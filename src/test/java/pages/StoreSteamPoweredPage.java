@@ -24,8 +24,8 @@ public class StoreSteamPoweredPage {
     clickSearchBtn = $("#store_search_link > img"),
     chooseGameDota2 =  $(".search_result_row:nth-child(1) .search_name > div"),
     verifyNameGame = $("#appHubAppName"),
-    giftCards = $(".gutter_top"),
-    sendThrough = $(".btnv6_blue_hoverfade"),
+    giftCards = $(".valve_links > a:nth-child(6)"),
+    sendThrough = $(".btnv6_blue_hoverfade.btn_medium"),
     verifyListGiftCards = $(".pageheader:nth-child(2)");
 
 
