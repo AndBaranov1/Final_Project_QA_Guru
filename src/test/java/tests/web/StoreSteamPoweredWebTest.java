@@ -104,7 +104,7 @@ public class StoreSteamPoweredWebTest extends TestBase {
         });
     }
 
-    @DisplayName("steamGiftCards")
+    @DisplayName("Steam Gift Cards")
     @Test
     void steamGiftCards() {
         step("Open form Steam", () -> {
@@ -129,7 +129,34 @@ public class StoreSteamPoweredWebTest extends TestBase {
 
     }
 
+    @DisplayName("Open points shop")
+    @Test
+    void openPointShop() {
+        step("Open form Steam", () -> {
+            steamPoweredPage.openPage();
+        });
 
+        step("Open the items section for points", () -> {
+            steamPoweredPage.openPointShop();
+        });
+
+        step("Open list of item sets", () -> {
+            steamPoweredPage.allItemBundels();
+        });
+
+        step("Open item pack", () -> {
+            steamPoweredPage.getOpenItemBundel();
+        });
+
+        step("Open item", () -> {
+            steamPoweredPage.openBundel();
+        });
+
+        step("Check item name AKIHABARA", () -> {
+            steamPoweredPage.verifyCartBundel("AKIHABARA");
+        });
+
+    }
 
 
 

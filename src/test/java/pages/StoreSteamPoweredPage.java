@@ -26,7 +26,12 @@ public class StoreSteamPoweredPage {
     verifyNameGame = $("#appHubAppName"),
     giftCards = $(".valve_links > a:nth-child(6)"),
     sendThrough = $(".btnv6_blue_hoverfade.btn_medium"),
-    verifyListGiftCards = $(".pageheader:nth-child(2)");
+    verifyListGiftCards = $(".pageheader:nth-child(2)"),
+    pointShop = $(".tab:nth-child(8) > span"),
+    itemBundels = $(".padding-bottom-none:nth-child(1) > .loyaltyprimarynav_SecondaryNavItem_2mFH5:nth-child(4) > .loyaltyprimarynav_Label_2Cstp"),
+    getItemBundel = $(".padding-top-large:nth-child(1) .bundle_ItemHand_2zFSr > .padding-left-small:nth-child(3)"),
+    openBundel = $(".padding-top-large:nth-child(1) .rewarditem_ImageFrames_2MPpw"),
+    verifyBundel = $(".redeempointsmodal_Header_1btwT");
 
 
 
@@ -132,6 +137,31 @@ public class StoreSteamPoweredPage {
 
     public StoreSteamPoweredPage verifyListGiftCardsSteam(String value) {
         verifyListGiftCards.shouldHave(text(value));
+        return this;
+    }
+
+    public StoreSteamPoweredPage openPointShop() {
+        pointShop.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage allItemBundels() {
+        itemBundels.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage getOpenItemBundel() {
+        getItemBundel.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage openBundel() {
+        openBundel.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage verifyCartBundel(String value) {
+        verifyBundel.shouldHave(text(value));
         return this;
     }
 }
