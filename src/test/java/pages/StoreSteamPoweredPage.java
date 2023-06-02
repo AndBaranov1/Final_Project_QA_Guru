@@ -23,7 +23,10 @@ public class StoreSteamPoweredPage {
     setClickFieldSearch = $("#store_nav_search_term"),
     clickSearchBtn = $("#store_search_link > img"),
     chooseGameDota2 =  $(".search_result_row:nth-child(1) .search_name > div"),
-    verifyNameGame = $("#appHubAppName");
+    verifyNameGame = $("#appHubAppName"),
+    giftCards = $(".gutter_top"),
+    sendThrough = $(".btnv6_blue_hoverfade"),
+    verifyListGiftCards = $(".pageheader:nth-child(2)");
 
 
 
@@ -114,6 +117,21 @@ public class StoreSteamPoweredPage {
 
     public StoreSteamPoweredPage verifyNameGameDota2(String value) {
         verifyNameGame.shouldHave(text(value));
+        return this;
+    }
+
+    public StoreSteamPoweredPage clickGiftCards() {
+        giftCards.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage sendThroughSteam() {
+        sendThrough.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage verifyListGiftCardsSteam(String value) {
+        verifyListGiftCards.shouldHave(text(value));
         return this;
     }
 }

@@ -101,4 +101,28 @@ public class StoreSteamPoweredWebTest extends TestBase {
             steamPoweredPage.verifyNameGameDota2("Dota 2");
         });
     }
+
+    @DisplayName("steamGiftCards")
+    @Test
+    void steamGiftCards() {
+        step("Open form Steam", () -> {
+            steamPoweredPage.openPage();
+        });
+
+        step("Click steam gift cards", () -> {
+            steamPoweredPage.clickGiftCards();
+        });
+
+        step("Send through steam", () -> {
+            steamPoweredPage.sendThroughSteam();
+        });
+        step("Verify digital gift cards", () -> {
+            steamPoweredPage.verifyListGiftCardsSteam("ЭЛЕКТРОННЫЕ ПОДАРОЧНЫЕ КАРТЫ");
+        });
+    }
+
+
+
+
+
 }
