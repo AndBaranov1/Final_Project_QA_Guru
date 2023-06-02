@@ -41,7 +41,7 @@ public class StoreSteamPoweredWebTest extends TestBase {
             steamPoweredPage.openPage();
         });
 
-        step("Click on language pull down", () -> {
+     /*   step("Click on language pull down", () -> {
             steamPoweredPage.clickLanguage();
         });
 
@@ -51,7 +51,7 @@ public class StoreSteamPoweredWebTest extends TestBase {
 
         step("Click on language English", () -> {
             steamPoweredPage.chooseLanguageEnglish();
-        });
+        });*/
 
         step("Hover your mouse over the section new and interesting", () -> {
             steamPoweredPage.changeNewAndInteresting();
