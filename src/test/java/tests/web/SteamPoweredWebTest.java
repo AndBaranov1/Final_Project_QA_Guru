@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.switchTo;
 import static io.qameta.allure.Allure.step;
 
 @Tags({@Tag("web")})
-public class StoreSteamPoweredWebTest extends TestBase {
+public class SteamPoweredWebTest extends TestBase {
 
     @DisplayName("Add prime status game in basket")
     @Test
@@ -52,7 +52,7 @@ public class StoreSteamPoweredWebTest extends TestBase {
         });
     }
 
-    @DisplayName("Search and selection of the game dota 2")
+    @DisplayName("Search and selection of the game Dota 2")
     @Test
     void searchGameDota2() {
         step("Open form Steam", () -> {
@@ -80,7 +80,7 @@ public class StoreSteamPoweredWebTest extends TestBase {
         });
     }
 
-    @DisplayName("Steam Gift Cards")
+    @DisplayName("List of digital gift cards in Steam")
     @Test
     void steamGiftCards() {
         step("Open form Steam", () -> {
@@ -91,7 +91,7 @@ public class StoreSteamPoweredWebTest extends TestBase {
             steamPoweredPage.clickGiftCards();
         });
 
-        step("switchTo Window", () -> {
+        step("Switch to another tab in the browser", () -> {
             switchTo().window(1);
         });
 

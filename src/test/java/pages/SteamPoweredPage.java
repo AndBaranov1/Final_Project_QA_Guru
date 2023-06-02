@@ -1,13 +1,13 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class StoreSteamPoweredPage {
+public class SteamPoweredPage {
     private SelenideElement
     loginBtn =  $(".global_action_link:nth-child(2)"),
     setLogin = $(".newlogindialog_TextField_2KXGK:nth-child(1) > .newlogindialog_TextInput_2eKVn"),
@@ -26,6 +26,7 @@ public class StoreSteamPoweredPage {
     clickSearchBtn = $("#store_search_link > img"),
     chooseGameDota2 =  $(".search_result_row:nth-child(1) .search_name > div"),
     verifyNameGame = $("#appHubAppName"),
+    verifyResulSearchGame = $(".search_result_row .title"),
     giftCards = $(".valve_links > a:nth-child(6)"),
     sendThrough = $(".btnv6_blue_hoverfade.btn_medium"),
     verifyListGiftCards = $(".pageheader:nth-child(2)"),
@@ -37,137 +38,142 @@ public class StoreSteamPoweredPage {
 
 
 
-    public StoreSteamPoweredPage openPage() {
+    public SteamPoweredPage openPage() {
         open("https://store.steampowered.com/");
         return this;
     }
 
-    public StoreSteamPoweredPage clickLoginBtn() {
+    public SteamPoweredPage clickLoginBtn() {
         loginBtn.click();
         return this;
     }
 
-    public StoreSteamPoweredPage setInputLogin(String value) {
+    public SteamPoweredPage setInputLogin(String value) {
         setLogin.setValue(value);
         return this;
     }
 
-    public StoreSteamPoweredPage setInputPassword(String value) {
+    public SteamPoweredPage setInputPassword(String value) {
         setPassword.setValue(value);
         return this;
     }
 
-    public StoreSteamPoweredPage clickSubmitButton() {
+    public SteamPoweredPage clickSubmitButton() {
         submitBtn.click();
         return this;
     }
 
-    public StoreSteamPoweredPage verifyLoginUnsuccessful(String value) {
+    public SteamPoweredPage verifyLoginUnsuccessful(String value) {
         verifyTextError.shouldHave(text(value));
         return this;
     }
 
-    public StoreSteamPoweredPage clickLanguage() {
+    public SteamPoweredPage clickLanguage() {
         language.click();
         return this;
     }
 
-    public StoreSteamPoweredPage mouseOverLanguage() {
+    public SteamPoweredPage mouseOverLanguage() {
         chooseLanguage.hover();
         return this;
     }
 
-    public StoreSteamPoweredPage chooseLanguageEnglish() {
+    public SteamPoweredPage chooseLanguageEnglish() {
         chooseLanguage.click();
         return this;
     }
 
-    public StoreSteamPoweredPage changeNewAndInteresting() {
+    public SteamPoweredPage changeNewAndInteresting() {
         tabNewAndInrteresting.hover();
         return this;
     }
 
-    public StoreSteamPoweredPage clickTabMostPlayed() {
+    public SteamPoweredPage clickTabMostPlayed() {
         mostPlayed.click();
         return this;
     }
 
-    public StoreSteamPoweredPage clickGameInList() {
+    public SteamPoweredPage clickGameInList() {
         clickGame.click();
         return this;
     }
 
-    public StoreSteamPoweredPage clickAddBasketBtn() {
+    public SteamPoweredPage clickAddBasketBtn() {
         addBasketBtn.click();
         return this;
     }
 
-    public StoreSteamPoweredPage verifyBasketPrimeStatus(String value) {
+    public SteamPoweredPage verifyBasketPrimeStatus(String value) {
         verifyPrimeStatus.shouldHave(text(value));
         return this;
     }
 
-    public StoreSteamPoweredPage clickFieldSearch() {
+    public SteamPoweredPage clickFieldSearch() {
         setClickFieldSearch.click();
         return this;
     }
 
-    public StoreSteamPoweredPage setInputSearch(String value) {
+    public SteamPoweredPage setInputSearch(String value) {
         setClickFieldSearch.setValue(value);
         return this;
     }
 
-    public StoreSteamPoweredPage clickSearchButton() {
+    public SteamPoweredPage clickSearchButton() {
         clickSearchBtn.click();
         return this;
     }
 
-    public StoreSteamPoweredPage selectGameDota2() {
+    public SteamPoweredPage selectGameDota2() {
         chooseGameDota2.click();
         return this;
     }
 
-    public StoreSteamPoweredPage verifyNameGameDota2(String value) {
+    public SteamPoweredPage verifyNameGameDota2(String value) {
         verifyNameGame.shouldHave(text(value));
         return this;
     }
 
-    public StoreSteamPoweredPage clickGiftCards() {
+    public SteamPoweredPage verifyResultSearch(String expectedResult) {
+        verifyResulSearchGame.shouldHave(Condition.text(expectedResult));
+        return this;
+    }
+
+    public SteamPoweredPage clickGiftCards() {
         giftCards.click();
         return this;
     }
 
-    public StoreSteamPoweredPage sendThroughSteam() {
+    public SteamPoweredPage sendThroughSteam() {
         sendThrough.click();
         return this;
     }
 
-    public StoreSteamPoweredPage verifyListGiftCardsSteam(String value) {
+    public SteamPoweredPage verifyListGiftCardsSteam(String value) {
         verifyListGiftCards.shouldHave(text(value));
         return this;
     }
 
-    public StoreSteamPoweredPage openPointShop() {
+    public SteamPoweredPage openPointShop() {
         pointShop.click();
         return this;
     }
 
-    public StoreSteamPoweredPage allItemBundels() {
+    public SteamPoweredPage allItemBundels() {
         itemBundels.click();
         return this;
     }
 
-    public StoreSteamPoweredPage getOpenItemBundel() {
+    public SteamPoweredPage getOpenItemBundel() {
         getItemBundel.click();
         return this;
     }
 
-    public StoreSteamPoweredPage openBundel() {
+    public SteamPoweredPage openBundel() {
         openBundel.click();
         return this;
     }
 
-    public StoreSteamPoweredPage verifyCartBundel(String value) {
+    public SteamPoweredPage verifyCartBundel(String value) {
         verifyBundel.shouldHave(text(value));
         return this;
     }

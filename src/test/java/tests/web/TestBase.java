@@ -8,13 +8,13 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.StoreSteamPoweredPage;
+import pages.SteamPoweredPage;
 
 import java.util.HashMap;
 
 public class TestBase {
 
-    StoreSteamPoweredPage steamPoweredPage = new StoreSteamPoweredPage();
+    SteamPoweredPage steamPoweredPage = new SteamPoweredPage();
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://store.steampowered.com";

@@ -17,7 +17,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Tags({@Tag("api")})
-public class StoreSteamPoweredApiTest {
+public class SteamPoweredApiTest {
 
     @Test
     @DisplayName("Game search Warface")
