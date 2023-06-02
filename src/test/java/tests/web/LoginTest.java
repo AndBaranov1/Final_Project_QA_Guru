@@ -29,11 +29,11 @@ public class LoginTest extends TestBase {
         });
 
         step("Fill in the login field", () -> {
-            steamPoweredPage.setInputLogin("Autotester_qa_demo");
+            steamPoweredPage.setInputLogin();
         });
 
         step("Fill in the password field", () -> {
-            steamPoweredPage.setInputPassword("Db)cE*FUD3Dw98L");
+            steamPoweredPage.setInputPassword();
         });
 
         step("Click login submit button", () -> {
@@ -55,11 +55,11 @@ public class LoginTest extends TestBase {
         });
 
         step("Fill in the login field", () -> {
-            steamPoweredPage.setInputLogin("Autotester_qa_demo");
+            steamPoweredPage.setInputLogin();
         });
 
-        step("Fill in the password field", () -> {
-            steamPoweredPage.setInputPassword("tests");
+        step("Fill in the wrong password field", () -> {
+            steamPoweredPage.setInputWrongPassword();
         });
 
         step("Click login submit button", () -> {

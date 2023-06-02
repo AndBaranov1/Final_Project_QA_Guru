@@ -3,6 +3,9 @@ package tests.api;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.models.AddCartBodyModel;
 import drivers.models.SearchResponseModel;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
@@ -12,13 +15,18 @@ import org.junit.jupiter.api.Test;
 import tests.Specs;
 
 import static help.CustomApiListener.withCustomTemplates;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
+import static io.qameta.allure.SeverityLevel.NORMAL;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Story("Autotests for API")
 @Tags({@Tag("api")})
 public class SteamPoweredApiTest {
 
+    @Owner("a.baranov")
+    @Severity(NORMAL)
     @Test
     @DisplayName("Game search Warface")
     void searchGameApi() {
@@ -41,6 +49,8 @@ public class SteamPoweredApiTest {
         assertEquals( 2, data.getTotal_count());
     }
 
+    @Owner("a.baranov")
+    @Severity(CRITICAL)
     @DisplayName("Open game Dota 2")
     @Test
     void openGameApi() {
@@ -64,6 +74,8 @@ public class SteamPoweredApiTest {
 
     }
 
+    @Owner("a.baranov")
+    @Severity(NORMAL)
     @Test
     @DisplayName("Opening of the 'Survival' games section")
     void openSurvivalGamesApi() {
@@ -87,6 +99,8 @@ public class SteamPoweredApiTest {
                 .body(matchesJsonSchemaInClasspath("schemes/openSection.json"));
     }
 
+    @Owner("a.baranov")
+    @Severity(CRITICAL)
     @Test
     @DisplayName("Add game to cart")
     void potentialBuyGamesApi() {

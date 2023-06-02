@@ -1,20 +1,26 @@
 package tests.web;
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static io.qameta.allure.Allure.step;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
 
+@Owner("a.baranov")
+@Story("Autotests for UI")
 public class SearchResultsTest extends TestBase{
-
 
     @CsvSource(value  = {
             "Tekken, TEKKEN 8",
             "Need for Speed, Need for Speed™ Unbound"
     })
-    @ParameterizedTest(name = "When searching on the site {0} text will be displayed {1}")
+    @Severity(CRITICAL)
+    @ParameterizedTest(name = "When searching on the site Steam {0} text will be displayed {1}")
     @Tags({
             @Tag("BLOCKER"),
             @Tag("web")
@@ -28,7 +34,7 @@ public class SearchResultsTest extends TestBase{
             steamPoweredPage.clickFieldSearch();
         });
 
-        step("Enter in search Dota 2", () -> {
+        step("Enter in search name Game", () -> {
             steamPoweredPage.setInputSearch(testData);
         });
 
@@ -36,10 +42,8 @@ public class SearchResultsTest extends TestBase{
             steamPoweredPage.clickSearchButton();
         });
 
-        step("Verify name ", () -> {
+        step("Verify name result search", () -> {
             steamPoweredPage.verifyResultSearch(expectedResult);
         });
-
     }
-
 }

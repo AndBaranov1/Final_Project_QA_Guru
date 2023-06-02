@@ -2,21 +2,22 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import config.AuthorizationConfig;
+import org.aeonbits.owner.ConfigFactory;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SteamPoweredPage {
+
+    static AuthorizationConfig config = ConfigFactory.create(AuthorizationConfig.class, System.getProperties());
     private SelenideElement
     loginBtn =  $(".global_action_link:nth-child(2)"),
     setLogin = $(".newlogindialog_TextField_2KXGK:nth-child(1) > .newlogindialog_TextInput_2eKVn"),
     setPassword = $(".newlogindialog_TextField_2KXGK:nth-child(2) > .newlogindialog_TextInput_2eKVn"),
     submitBtn =  $(".newlogindialog_SubmitButton_2QgFE"),
-
     verifyTextError = $(".newlogindialog_FormError_1Mcy9"),
-    language  = $("#language_pulldown"),
-    chooseLanguage = $(".popup_menu_item:nth-child(22)"),
     tabNewAndInrteresting = $("#noteworthy_tab .pulldown_desktop"),
     mostPlayed = $("#noteworthy_flyout .popup_menu_item:nth-child(3)"),
     clickGame =  $(".weeklytopsellers_TableRow_2-RN6"),
@@ -48,13 +49,18 @@ public class SteamPoweredPage {
         return this;
     }
 
-    public SteamPoweredPage setInputLogin(String value) {
-        setLogin.setValue(value);
+    public SteamPoweredPage setInputLogin() {
+        setLogin.setValue(config.login());
         return this;
     }
 
-    public SteamPoweredPage setInputPassword(String value) {
-        setPassword.setValue(value);
+    public SteamPoweredPage setInputPassword() {
+        setPassword.setValue(config.password());
+        return this;
+    }
+
+    public SteamPoweredPage setInputWrongPassword() {
+        setPassword.setValue(config.wrong_password());
         return this;
     }
 
@@ -65,21 +71,6 @@ public class SteamPoweredPage {
 
     public SteamPoweredPage verifyLoginUnsuccessful(String value) {
         verifyTextError.shouldHave(text(value));
-        return this;
-    }
-
-    public SteamPoweredPage clickLanguage() {
-        language.click();
-        return this;
-    }
-
-    public SteamPoweredPage mouseOverLanguage() {
-        chooseLanguage.hover();
-        return this;
-    }
-
-    public SteamPoweredPage chooseLanguageEnglish() {
-        chooseLanguage.click();
         return this;
     }
 

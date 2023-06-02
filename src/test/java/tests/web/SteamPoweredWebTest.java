@@ -1,35 +1,31 @@
 package tests.web;
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static io.qameta.allure.Allure.step;
+import static io.qameta.allure.SeverityLevel.CRITICAL;
+import static io.qameta.allure.SeverityLevel.MINOR;
+import static io.qameta.allure.SeverityLevel.NORMAL;
 
+@Story("Autotests for UI")
 @Tags({@Tag("web")})
 public class SteamPoweredWebTest extends TestBase {
 
+    @Owner("a.baranov")
+    @Severity(CRITICAL)
     @DisplayName("Add prime status game in basket")
     @Test
     void addPrimeStatusGameInBasket() {
         step("Open form Steam", () -> {
             steamPoweredPage.openPage();
         });
-
-     /*   step("Click on language pull down", () -> {
-            steamPoweredPage.clickLanguage();
-        });
-
-        step("Hover your mouse over language English", () -> {
-            steamPoweredPage.mouseOverLanguage();
-        });
-
-        step("Click on language English", () -> {
-            steamPoweredPage.chooseLanguageEnglish();
-        });*/
 
         step("Hover your mouse over the section new and interesting", () -> {
             steamPoweredPage.changeNewAndInteresting();
@@ -52,6 +48,8 @@ public class SteamPoweredWebTest extends TestBase {
         });
     }
 
+    @Owner("a.baranov")
+    @Severity(NORMAL)
     @DisplayName("Search and selection of the game Dota 2")
     @Test
     void searchGameDota2() {
@@ -80,6 +78,8 @@ public class SteamPoweredWebTest extends TestBase {
         });
     }
 
+    @Owner("a.baranov")
+    @Severity(MINOR)
     @DisplayName("List of digital gift cards in Steam")
     @Test
     void steamGiftCards() {
@@ -102,9 +102,10 @@ public class SteamPoweredWebTest extends TestBase {
         step("Verify digital gift cards", () -> {
             steamPoweredPage.verifyListGiftCardsSteam("DIGITAL GIFT CARDS");
         });
-
     }
 
+    @Owner("a.baranov")
+    @Severity(NORMAL)
     @DisplayName("Open points shop")
     @Test
     void openPointShop() {
@@ -131,6 +132,5 @@ public class SteamPoweredWebTest extends TestBase {
         step("Check item name AKIHABARA", () -> {
             steamPoweredPage.verifyCartBundel("AKIHABARA");
         });
-
     }
 }
