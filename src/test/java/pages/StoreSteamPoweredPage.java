@@ -13,6 +13,8 @@ public class StoreSteamPoweredPage {
     setLogin = $(".newlogindialog_TextField_2KXGK:nth-child(1) > .newlogindialog_TextInput_2eKVn"),
     setPassword = $(".newlogindialog_TextField_2KXGK:nth-child(2) > .newlogindialog_TextInput_2eKVn"),
     submitBtn =  $(".newlogindialog_SubmitButton_2QgFE"),
+
+    verifyTextError = $(".newlogindialog_FormError_1Mcy9"),
     language  = $("#language_pulldown"),
     chooseLanguage = $(".popup_menu_item:nth-child(22)"),
     tabNewAndInrteresting = $("#noteworthy_tab .pulldown_desktop"),
@@ -57,6 +59,11 @@ public class StoreSteamPoweredPage {
 
     public StoreSteamPoweredPage clickSubmitButton() {
         submitBtn.click();
+        return this;
+    }
+
+    public StoreSteamPoweredPage verifyLoginUnsuccessful(String value) {
+        verifyTextError.shouldHave(text(value));
         return this;
     }
 
