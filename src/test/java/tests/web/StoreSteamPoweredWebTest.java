@@ -70,7 +70,7 @@ public class StoreSteamPoweredWebTest extends TestBase {
         });
 
         step("Verify in basket prime status", () -> {
-            steamPoweredPage.verifyBasketPrimeStatus("прайм-статус");
+            steamPoweredPage.verifyBasketPrimeStatus("Prime Status Upgrade");
         });
     }
 
