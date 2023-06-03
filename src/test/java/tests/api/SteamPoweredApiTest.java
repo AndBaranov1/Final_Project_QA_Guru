@@ -35,7 +35,8 @@ public class SteamPoweredApiTest {
                 .filter(withCustomTemplates())
                 .log().uri()
                 .contentType(ContentType.JSON)
-                .queryParam("start", "50")
+                .queryParam("start", "3")
+                .queryParam("cc", "RU")
                 .queryParam("term", "Warface")
                 .queryParam("supportedlang", "russian")
                 .queryParam("infinite", "1")
@@ -46,7 +47,8 @@ public class SteamPoweredApiTest {
                 .spec(Specs.responseSpec)
                 .log().body()
                 .extract().as(SearchResponseModel.class);
-        assertEquals( 2, data.getTotal_count());
+        assertEquals(1, data.getSuccess());
+        assertEquals( 1, data.getTotal_count());
     }
 
     @Owner("a.baranov")
