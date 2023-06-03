@@ -21,8 +21,8 @@ public class SearchResultsTest extends TestBase{
             "Need for Speed, Need for Speed™ Unbound"
     })
     @Severity(CRITICAL)
-    @ParameterizedTest(name = "When searching on the site Steam {0} text will be displayed {1}")
-    @DisplayName("Search results")
+    @ParameterizedTest(name = "When you search for a {0} game, you will see {1}")
+    @DisplayName("Game Search:")
     @Tags({
             @Tag("BLOCKER"),
             @Tag("web")
