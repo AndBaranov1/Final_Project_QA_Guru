@@ -3,6 +3,7 @@ package tests.web;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,6 +22,7 @@ public class SearchResultsTest extends TestBase{
     })
     @Severity(CRITICAL)
     @ParameterizedTest(name = "When searching on the site Steam {0} text will be displayed {1}")
+    @DisplayName("Search results")
     @Tags({
             @Tag("BLOCKER"),
             @Tag("web")

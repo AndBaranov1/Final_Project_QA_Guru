@@ -1,8 +1,8 @@
 package tests.api;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import drivers.models.AddCartBodyModel;
-import drivers.models.SearchResponseModel;
+import models.AddCartBodyModel;
+import models.SearchResponseModel;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.Story;
