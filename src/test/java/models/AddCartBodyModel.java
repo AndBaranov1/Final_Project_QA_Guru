@@ -6,5 +6,4 @@ public class AddCartBodyModel {
     public boolean isbAllowAppImpressions() {
         return bAllowAppImpressions;
     }
-
 }

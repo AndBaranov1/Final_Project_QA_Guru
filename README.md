@@ -9,10 +9,11 @@
 * <a href="#tools">Использованный стек технологий</a>
 * <a href="#description">Общая информация о проекте</a>
 * <a href="#cases">Реализованные проверки</a>
-* <a href="#console">Запуск тестов из терминала</a>
+* <a href="#console">Запуск автотестов</a>
 * <a href="#jenkins">Запуск тестов в Jenkins</a>
 * <a href="#allure">Allure отчеты</a>
 * <a href="#allure_testops">Интеграция с Allure TestOps</a>
+* <a href="#jira">Интеграция с Jira</a>
 * <a href="#telegram">Уведомления в Telegram с использованием бота</a>
 * <a href="#video">Видео примера запуска тестов в Selenoid</a>
 
@@ -167,6 +168,7 @@ clean test
 <img title="Allure TestOps DashBoard" src="media/screens/testops-launches.png">
 </p>
 
+<a id="jira"></a>
 ## <img src="media/logo/Jira.svg" title="Jira" width="4%"/> Интеграция с Jira
 
 > Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>.
