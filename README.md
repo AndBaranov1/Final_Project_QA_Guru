@@ -1,7 +1,7 @@
 # Дипломный проект по автоматизации тестирования UI, API для сайта STEAM
 
 <p align="center">
-<img width="25%" title="logo_steam.svg" src="media/logo/logo_steam.svg">
+<img width="50%" title="logo_steam.svg" src="media/logo/logo_steam.svg">
 </p>
 
 ## :pushpin: Содержание:
@@ -109,10 +109,10 @@ clean test
 ### Параметры сборки
 
 > `${BROWSER_NAME}` – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
-> `${code>BROWSER_VERSION}` – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>100.0</code>.
-> `${code>BROWSER_SIZE}` – размер окна браузера, в котором будут выполняться тесты.
-> `${code>BASE_URL}` – Url, по которому будет открываться тестируемое приложение. По-умолчанию - <code>1920x1080</code>.
-> `${code>REMOTE_BROWSER_URL}` – адрес удаленного сервера, на котором будут запускаться тесты.
+> `${BROWSER_VERSION}` – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>100.0</code>.
+> `${BROWSER_SIZE}` – размер окна браузера, в котором будут выполняться тесты.
+> `${BASE_URL}` – Url, по которому будет открываться тестируемое приложение. По-умолчанию - <code>1920x1080</code>.
+> `${REMOTE_BROWSER_URL}` – адрес удаленного сервера, на котором будут запускаться тесты.
 
 <a id="jenkins"></a>
 ## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Запуск тестов в Jenkins
@@ -124,6 +124,7 @@ clean test
 <img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
 </p>
 
+<a id="allure"></a>
 ## <img src="media/logo/Allure_Report.svg" title="Allure Report" width="4%"/> Allure отчеты
 ### Overview
 
@@ -146,7 +147,7 @@ clean test
 ## <img src="media/logo/AllureTestOps.svg" title="Allure TestOps" width="4%"/> Интеграция с Allure TestOps
 
 > Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.
-> Результат выполнения автотестов отображается в <code>Allure TestOps</code>
+> Результат выполнения автотестов отображается в <code>Allure TestOps</code>.
 > На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
 
 ### Доска
