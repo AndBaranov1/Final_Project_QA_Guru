@@ -18,7 +18,7 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 public class SearchResultsTest extends TestBase {
 
     @CsvSource(value = {
-            "Football, eFootball™ 2023",
+            "Football, Football Manager 2023",
             "Need for Speed, Need for Speed™ Unbound"
     })
 
