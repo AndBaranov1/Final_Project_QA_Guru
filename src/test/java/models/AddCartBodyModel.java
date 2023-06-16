@@ -1,5 +1,8 @@
 package models;
 
+import lombok.Data;
+
+@Data
 public class AddCartBodyModel {
     private boolean bAllowAppImpressions;
 

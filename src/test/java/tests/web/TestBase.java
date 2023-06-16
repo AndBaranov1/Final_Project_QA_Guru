@@ -9,13 +9,30 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.SteamPoweredPage;
+import pages.CartPage;
+import pages.ChartsGamePage;
+import pages.DigitalGiftCardsPage;
+import pages.GameDetailPage;
+import pages.ListGamePage;
+import pages.LoginPage;
+import pages.MainPage;
+import pages.PointsShopPage;
+import pages.SelectGiftCardPage;
 
 import java.util.HashMap;
 
 public class TestBase {
 
-    SteamPoweredPage steamPoweredPage = new SteamPoweredPage();
+    MainPage mainPage = new MainPage();
+    ChartsGamePage chartsGamePage = new ChartsGamePage();
+    CartPage cartPage = new CartPage();
+    ListGamePage listGamePage = new ListGamePage();
+    LoginPage loginPage = new LoginPage();
+    DigitalGiftCardsPage digitalGiftCardsPage = new DigitalGiftCardsPage();
+    SelectGiftCardPage selectGiftCardPage = new SelectGiftCardPage();
+    PointsShopPage pointsShopPage = new PointsShopPage();
+    GameDetailPage gameDetailPage = new GameDetailPage();
+
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://store.steampowered.com";

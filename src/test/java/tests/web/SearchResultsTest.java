@@ -13,39 +13,40 @@ import static io.qameta.allure.Allure.step;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 @Owner("a.baranov")
+@Severity(CRITICAL)
 @Story("Autotests for UI")
-public class SearchResultsTest extends TestBase{
+public class SearchResultsTest extends TestBase {
 
-    @CsvSource(value  = {
+    @CsvSource(value = {
             "Tekken, TEKKEN 8",
             "Need for Speed, Need for Speed™ Unbound"
     })
-    @Severity(CRITICAL)
+
     @ParameterizedTest(name = "When you search for a {0} game, you will see {1}")
     @DisplayName("Game Search:")
     @Tags({
             @Tag("BLOCKER"),
             @Tag("web")
     })
-    void mainPageSearchGame(String testData, String expectedResult) {
+    void mainPageSearchGame(String game, String expectedResult) {
         step("Open form Steam", () -> {
-            steamPoweredPage.openPage();
+            mainPage.openPage();
         });
 
         step("Click search field", () -> {
-            steamPoweredPage.clickFieldSearch();
+            mainPage.clickFieldSearch();
         });
 
         step("Enter in search name Game", () -> {
-            steamPoweredPage.setInputSearch(testData);
+            mainPage.setInputSearch(game);
         });
 
         step("Click search button", () -> {
-            steamPoweredPage.clickSearchButton();
+            mainPage.clickSearchButton();
         });
 
         step("Verify name result search", () -> {
-            steamPoweredPage.verifyResultSearch(expectedResult);
+            mainPage.verifyResultSearch(expectedResult);
         });
     }
 }

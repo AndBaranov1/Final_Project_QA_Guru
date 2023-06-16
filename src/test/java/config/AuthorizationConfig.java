@@ -13,6 +13,6 @@ public interface AuthorizationConfig extends Config {
     @Key("password")
     String password();
 
-    @Key("wrong_password")
-    String wrong_password();
+    @Key("wrongPassword")
+    String wrongPassword();
 }

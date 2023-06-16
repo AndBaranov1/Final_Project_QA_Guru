@@ -1,16 +1,15 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Data;
+
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchResponseModel {
-    private Integer success, total_count;
 
-    public Integer getTotal_count() {
-        return total_count;
-    }
-
-    public Integer getSuccess() {
-        return success;
-    }
+    @JsonProperty("total_count")
+    private Integer totalCount;
+    private Integer success;
  }
