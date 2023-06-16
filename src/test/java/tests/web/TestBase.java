@@ -40,6 +40,7 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browser_version", "100.0");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url","selenoid.autotests.cloud/wd/hub");
+        Configuration.pageLoadStrategy = "eager";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", new HashMap<String, Object>() {{
             put("enableVNC", true);
