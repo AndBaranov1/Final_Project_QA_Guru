@@ -67,7 +67,7 @@ public class GiftCardShopTest extends TestBase {
         });
 
         step("Check item name AKIHABARA", () -> {
-            pointsShopPage.verifyCartBundel("AKIHABARA");
+            pointsShopPage.verifyCartBundel("AKIHABARA ACCEPT");
         });
     }
 }
