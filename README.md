@@ -117,7 +117,7 @@ clean test
 
 <a id="jenkins"></a>
 ## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Запуск тестов в Jenkins
-<a target="_blank" href="https://jenkins.autotests.cloud/job/Final_Project_qaguru/#">Сборка в Jenkins</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/Students/job/Final_Project_qaguru/#">Сборка в Jenkins</a>
 <p align="center">
 
 > Использование параметризованной сборки позволяет изменять параметры перед ее запуском, выбирая значения из списка или указывая их непосредственно.
