@@ -21,7 +21,7 @@ public class LoginTest extends TestBase {
 
     static AuthorizationConfig authorizationConfig = ConfigFactory.create(AuthorizationConfig.class, System.getProperties());
 
-    @DisplayName("Authorization user")
+    @DisplayName("Successful authorization user")
     @Test
     void successfulAuthorization() {
         step("Open form Steam", () -> {
@@ -45,9 +45,9 @@ public class LoginTest extends TestBase {
         });
     }
 
-    @DisplayName("Unsuccessful Login")
+    @DisplayName("Unsuccessful password account")
     @Test
-    void unsuccessfulLogin() {
+    void unsuccessfulPasswordAccount() {
         step("Open form Steam", () -> {
             mainPage.openPage();
         });

@@ -42,8 +42,8 @@ public class TestBase {
         Configuration.remote = "https://user1:1234@" + System.getProperty("selenoid_url","selenoid.autotests.cloud/wd/hub");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", new HashMap<String, Object>() {{
-            put("enableVNC", true);
-            put("enableVideo", true);
+            put("enableVNC", false);
+            put("enableVideo", false);
         }});
 
     Configuration.browserCapabilities = capabilities;
